@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  sabnzbd:
+    image: linuxserver/sabnzbd:latest
+    container_name: sabnzbd
+    restart: unless-stopped
+    ports:
+      - 8085:8080
+    volumes:
+      - ./config:/config
+      - ./downloads:/downloads
+      - ./incomplete:/incomplete-downloads
+    environment:
+      - PUID=1000
+      - PGID=100
+      - TZ=America/New_York
+    networks:
+      - sabnet
+
+networks:
+  sabnet:
