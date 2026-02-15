@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  mediamanager:
+    image: ghcr.io/maxdorninger/mediamanager:latest
+    container_name: mediamanager
+    restart: unless-stopped
+    ports:
+      - 8086:8080
+    volumes:
+      - ./config:/config
+      - ./data:/data
+
+      # ✅ Trial library (clean single mount)
+      - /volume1/media/mm:/media
+
+      # ✅ SAB downloads
+      - /volume1/docker/sabnzbd/downloads:/downloads
+      - /volume1/docker/sabnzbd/incomplete:/incomplete-downloads
+
+    environment:
+      - TZ=America/New_York
