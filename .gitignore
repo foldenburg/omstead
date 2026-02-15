@@ -1,0 +1,73 @@
+# =========================
+# OS / Filesystem Noise
+# =========================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# Environment / Secrets
+# =========================
+.env
+.env.*
+*.env
+*.local
+
+# =========================
+# Docker
+# =========================
+# Docker build artifacts (rare, but safe)
+docker-compose.override.yml
+
+# Local volumes / bind mounts
+volumes/
+data/
+tmp/
+.cache/
+
+# Container runtime leftovers
+*.pid
+
+# =========================
+# Dependency / Build Output
+# =========================
+node_modules/
+dist/
+build/
+coverage/
+target/
+out/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.iml
+
+# =========================
+# Terraform / IaC (if present)
+# =========================
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
